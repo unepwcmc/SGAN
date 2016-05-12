@@ -1,0 +1,333 @@
+@import "all-globals";
+
+.feature-banner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+
+  .feature-title {
+    background-color: $brand-accent-colour-three;
+    color: $white;
+    padding: 25px;
+    width: 100%;
+
+    @include breakpoint($large_mobile) {
+      padding: 50px 75px 50px 50px;
+      width: 70%;
+    }
+
+    @include breakpoint($large_tablet) {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}
+
+.pages.home {
+  > .container {
+    padding: 50px 0;
+  }
+}
+
+.row.col-2 {
+  margin-bottom: 35px;
+
+  @include breakpoint($large_tablet) {
+    margin-bottom: 0;
+  }
+
+  main {
+    border-bottom: 8px solid $dark-grayish-blue;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    width: 100%;
+    @include breakpoint($large_tablet) {
+      @include span(7.9 of 12);
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .link-button-general {
+      margin-bottom: 35px;
+    }
+  }
+
+  aside {
+    margin-top: 25px;
+    width: 100%;
+    @include breakpoint($large_tablet) {
+      margin-top: 0;
+      @include span(3.9 of 12 omega);
+    }
+  }
+}
+
+.row.col-3 {
+  margin-left: -2.5%;
+  width: 105%;
+
+  @include breakpoint($large_tablet) {
+    margin-left: 0;
+    padding: 50px 0;
+    width: auto;
+  }
+
+  .grey-box {
+    width: 100%;
+    @include breakpoint($large_tablet) {
+      @include span(3.95 of 12);
+    }
+  }
+
+  aside {
+    width: 100%;
+    @include breakpoint($large_tablet) {
+      @include span(3.9 of 12 omega);
+    }
+  }
+}
+
+main {
+  > h2:first-of-type {
+    line-height: 1;
+    margin-top: 0;
+  }
+}
+
+.upcoming-events, .latest-resources {
+  color: $white;
+
+  h3 {
+    margin: 0;
+    padding: 25px;
+  }
+
+  ul li:last-child {
+    border-bottom: none;
+  }
+}
+
+.upcoming-events {
+  background-color: $brand-accent-colour-four;
+  
+  h3 {
+    border-bottom: 4px solid $mid-gray;
+  }
+
+  li {
+    padding: 25px;
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    @include breakpoint($small_tablet) { 
+      float: left;
+      width: 50%;
+
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+
+    @include breakpoint($large_tablet) { 
+      border-bottom: 4px solid $mid-gray;
+      float: none;
+      width: auto;
+    }
+  }
+
+  .event-sidebar-content {
+    display: inline-block;
+    margin-left: 5%;
+    vertical-align: top;
+    width: 68%;
+  }
+
+  img {
+    max-width: 80px;
+    width: 25%;
+  }
+
+  .h5 {
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 1.3;
+    margin: 0 0 15px;
+  }
+
+  span {
+    display: block;
+  }
+
+  .more-info-link {
+    border-bottom: 1px solid $brand-accent-colour-one;
+    color: $brand-accent-colour-one;
+    padding-bottom: 3px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-bottom: none;
+      color: lighten($brand-accent-colour-one, 10%);
+    }
+
+    &:after {
+      background-image: image-url('blue-chevron.svg');
+      right: -30px;
+      top: calc(50% - 10px);
+      @extend %arrow;
+    }
+  }
+
+  .link-button-general {
+    margin-bottom: 25px;
+    margin-left: 25px;
+  }
+}
+
+.grey-box {
+  background-color: $light-gray;
+  border-bottom: 35px solid darken($light-gray, 10%);
+  padding: 15px 35px;
+
+  @include breakpoint($large_tablet) {
+    // height: 375px; // current using set height to align els, but could use JS to find height tallest
+    padding: 35px;
+  }
+
+  h2 {
+    margin: 0;
+    position: relative;
+
+    &:after {
+      right: -10px;
+      top: calc(50% - 24px);
+      @extend %accordion-plus;
+
+      @include breakpoint($large_tablet) {
+        display: none;
+      }
+    }
+
+    &.shown:after {
+      right: -4px;
+      content: "-";
+      top: calc(50% - 26px);
+    }
+  }
+
+  .link-button-general {
+    margin: 0;
+  }
+
+  ul {
+    margin-top: 30px;
+
+    li {
+      padding: 2px 0 0 35px;
+      position: relative;
+
+      &:before {
+        background-image: image-url('black-chevron.svg');
+        left: 0;
+        top: calc(50% - 10px);
+        @extend %arrow;
+      }
+    }
+  }
+}
+
+
+
+.latest-resources {
+  background-color: $brand-accent-colour-one;
+  position: relative;
+
+  @include breakpoint($large_tablet) {
+    border-bottom: 35px solid $brand-accent-colour-one;
+  }
+
+  @include breakpoint($large_tablet) {
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      content: "";
+      background-color: $soft-blue;
+    }
+  }
+  
+  h3 {
+    border-bottom: 4px solid $soft-blue;
+    position: relative;
+
+    &:after {
+      color: $white;
+      right: 25px;
+      top: calc(50% - 18px);
+      @extend %accordion-plus;
+
+      @include breakpoint($large_tablet) {
+        display: none;
+      }
+    }
+
+    &.shown:after {
+      content: "-";
+      right: 30px;
+      top: calc(50% - 20px);
+    }
+  }
+
+  li {
+    border-bottom: 4px solid $soft-blue;
+    padding: 25px 25px 25px 50px;
+    position: relative;
+
+    &:before {
+      background-image: image-url('white-chevron.svg');
+      left: 15px;
+      top: 28px;
+      @extend %arrow;
+    }
+  }
+
+  a {
+    color: $brand-accent-colour-four;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: lighten($brand-accent-colour-four, 10%);
+    }
+  }
+}
+
+// overwriting custom scrollbar styles
+.scrollable .viewport .overview {
+  width: 100%;
+}
+
+.scrollable.default-skin .scroll-bar.vertical {
+  background-color: $light-gray;
+  height: 100% !important; // required to override plugin set styles
+  width: 15px;
+  z-index: $z-index-layer--second;
+}
+
+.scrollable.default-skin .scroll-bar .thumb {
+  background-color: darken($light-gray, 10%);
+  border-radius: 15px;
+  opacity: 1;
+}

@@ -1,0 +1,71 @@
+@import "../all-globals";
+
+footer {
+  background-image: image-url('footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-image: image-url('coloured-border.svg') 5;
+  border-width: 5px 0 0;
+  color: $white;
+  padding: 50px 50px 75px;
+  position: relative;
+  text-align: center;
+
+  @include breakpoint($small_tablet) {
+    padding: 150px 0 75px;
+    text-align: left;
+  }
+
+  img {
+    margin-top: 25px;
+    max-width: 100px;
+
+    @include breakpoint($small_tablet) {
+      bottom: 85px;
+      position: absolute;
+    }
+  }
+
+  ul {
+    margin-top: 15px;
+
+    &.desktop {
+      display: none;
+    }
+
+    @include breakpoint($small_tablet) {
+      &.desktop {
+        display: block;
+        float: right;
+        margin-top: 0;
+      }
+      
+      &.mobile {
+        display: none;
+      }
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .join-sgan {
+    width: 100%;
+
+    @include breakpoint($small_tablet) {
+      float: right;
+      margin-right: 25px;
+      width: 25%;
+    }
+  }
+
+  h4 {
+    margin-top: 0;
+  }
+}

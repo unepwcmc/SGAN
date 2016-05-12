@@ -1,0 +1,12 @@
+html_strip: true
+
+development:
+  bin_path:
+
+production:
+  version: '2.1.8'
+  bin_path: '/usr/bin'
+  configuration_file: /home/ubuntu/shared/config/production.sphinx.conf
+  pid_file: /home/ubuntu/shared/pids/searchd.pid
+  indices_location: /home/ubuntu/shared/db/sphinx
+  binlog_path: /home/ubuntu/shared/log/binlog

@@ -1,0 +1,46 @@
+<div class="field">
+  <%= f.label :background_image %>
+  <%= render :partial => "/refinery/admin/image_picker", :locals => {
+                                                               :f => f,
+                                                               :field => :background_image_id,
+                                                               :image => f.object.background_image,
+                                                               :toggle_image_display => false
+                                                       }
+  %>
+</div>
+
+<% unless params[:path] == 'home' %>
+
+  <div class="field">
+    <%= f.label :sidebar_title_one %>
+    <%= f.text_field :sidebar_title_one %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sidebar_title_two %>
+    <%= f.text_field :sidebar_title_two %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sidebar_title_three %>
+    <%= f.text_field :sidebar_title_three %>
+  </div>
+
+    <%= render :partial => '/refinery/admin/tabbed_fields',
+               :locals => { :f => f,
+                            :tabbed_fields => [
+                                    :sidebar_description_one,
+                                    :sidebar_description_two,
+                                    :sidebar_description_three
+                            ]
+               } %>
+<% end %>
+
+<%= label_tag :section_one, "Section one for Getting started page" %>
+<%= render :partial => '/refinery/admin/tabbed_fields',
+           :locals => { :f => f,
+                        :tabbed_fields => [:section_one]} %>
+
+  <%= render :partial => '/refinery/admin/tabbed_fields',
+             :locals => { :f => f,
+                          :tabbed_fields => [:footer_section_left, :footer_section_right]} %>

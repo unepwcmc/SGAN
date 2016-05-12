@@ -1,0 +1,7 @@
+<section id='records' class="tree">
+  <%= render 'records' %>
+</section>
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>
+<%= render '/refinery/admin/make_sortable', {:tree => true, replaceContentsAfterUpdate: true} if !searching? and ::Refinery::Documents::Admin::CategoriesController.sortable? and ::Refinery::Documents::Category.many? %>

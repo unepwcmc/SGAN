@@ -1,0 +1,371 @@
+@import "all-globals";
+
+.documents.index {
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.resource-category-title {
+  padding-right: 175px;
+}
+
+.back-to-resources {
+  position: absolute;
+  right: 0;
+}
+
+.documents-list {
+  
+  > li {
+    background-color: $very-light-gray;
+    border-right: 35px solid $brand-accent-colour-two;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    &.shown {
+      border-right: 35px solid $brand-accent-colour-one;
+    }
+
+    &:after {
+      color: $white;
+      right: -30px;
+      top: calc(50% - 18px);
+      @extend %accordion-plus;
+    }
+
+    &.shown:after {
+      content: "-";
+      right: -24px;
+    }
+
+    > h2 {
+      border-bottom: 1px solid $white;
+      font-size: 20px;
+      margin: 0;
+      padding: 15px 50px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: darken($very-light-gray, 5%);
+      }
+    }
+  }
+
+  .item-content {
+    cursor: default;
+    display: none;
+    padding: 15px 50px 50px;
+
+    img {
+      margin: 10px;
+    }
+
+    a {
+      color: $brand-accent-colour-one;
+    }
+  }
+
+  p {
+    margin: 0 0 15px;
+  }
+
+  .button {
+    margin: 0;
+    max-width: 100%;
+    width: 250px;
+  }
+}
+
+.sub-category-list {
+  @extend %styled-list;
+
+  > li {
+
+    > h2 {
+      cursor: pointer;
+      margin: 0;
+      padding: 15px 0 15px 65px;
+      position: relative;
+
+      &.shown {
+        &:before {
+          background-color: $brand-secondary-colour;
+        }
+        &:after {
+          background-image: image-url("cross-white.svg");
+          
+        }
+      }
+
+      &:before, &:after {
+        background-position: center;
+        background-repeat: no-repeat;
+        content: "";
+        height: 40px;
+        left: 0;
+        position: absolute;
+        top: calc(50% - 20px);
+        width: 40px;
+      }
+
+      &:before {
+        background-color: $brand-accent-colour-one;
+        border-bottom-right-radius: 15px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:after {
+        background-image: image-url("arrow-white.svg");
+      }
+    }
+  }
+
+  .resource-content {
+    display: none;
+
+    img {
+      margin: 10px;
+    }
+  }
+}
+
+.documents.index .sidebar {
+  margin-top: 25px;
+
+  hr {
+    display: none;
+  }
+
+  @include breakpoint($desktop) {
+    margin-top: 0;
+
+    hr {
+      display: block;
+    }
+  }
+}
+
+//// responsive sidebar layouts
+.categories-sidebar, .search-sidebar {
+  @include breakpoint($small_tablet) {
+    clear: left;
+    float: left;
+    width: 47.5%;
+  }
+  @include breakpoint($desktop) {
+    clear: none;
+    float: none;
+    width: auto;
+  }
+}
+
+.case-studies-sidebar {
+  @include breakpoint($small_tablet) {
+    float: right;
+    width: 47.5%;
+  }
+  @include breakpoint($desktop) {
+    float: none;
+    width: auto;
+  }
+}
+
+.categories-sidebar {
+  background-color: $brand-accent-colour-three;
+  color: $white;
+  padding-bottom: 25px;
+  @extend %two-sided-border;
+
+  h3 {
+    margin: 0;
+    padding: 25px;
+  }
+}
+
+.category-links {
+
+  li {
+    padding: 0 25px;
+    &:hover {
+      font-weight: $font-weight--ultra-bold;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &.selected {
+      font-weight: $font-weight--ultra-bold;
+    }
+  }
+}
+
+.search-sidebar {
+  background-color: $brand-accent-colour-four;
+  color: $white;
+  padding: 25px;
+  @extend %two-sided-border;
+
+  &.tablet {
+    display: none;
+  }
+
+  @include breakpoint($small_tablet) {
+  // called default because both mobile and desktop use it. only tablet(ish) size needs change
+    &.default {
+      display: none;
+    }
+    &.tablet {
+      display: block;
+    }
+  }
+
+  @include breakpoint($desktop) {
+    &.default {
+      display: block;
+    }
+    &.tablet {
+      display: none;
+    }
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.search-wrapper {
+  position: relative;
+
+  input[name=search] {
+    border: 0;
+    border-top: 6px solid $light-gray;
+    border-bottom-right-radius: 15px;
+    color: $base-font-color;
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 50px;
+    width: 100%;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  input[type=submit] {
+    background-color: $brand-accent-colour-one;
+    border: none;
+    border-bottom-right-radius: 15px;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    width: 35px;
+
+    &:hover {
+      background-color: darken($brand-accent-colour-one, 5%);
+    }
+  }
+}
+
+.case-studies-sidebar {
+  .link-button-general {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.pagination {
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+
+  .previous_page, .next_page {
+    color: $white;
+    font-weight: $font-weight--ultra-bold;
+    height: 60px;
+    padding: 15px 0px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    width: 150px;
+    @extend %t-tiny;
+
+    &:after {
+      border-style: solid;
+      content: "";
+      height: 0;
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+      width: 0;
+    }
+  }
+
+  .previous_page {
+    background-color: $brand-accent-colour-four;
+    float: left;
+    margin-left: 25px;
+
+    &:hover {
+      background-color: lighten($brand-accent-colour-four, 10%);
+
+      &:after {
+        border-color: transparent lighten($brand-accent-colour-four, 10%) transparent transparent;
+      }
+    }
+
+    &:after {
+      border-width: 30px 15px 30px 0;
+      border-color: transparent $brand-accent-colour-four transparent transparent;
+      left: -15px;
+      top: 0;
+    }
+  }
+
+  .next_page {
+    background-color: $brand-accent-colour-one;
+    float: right;
+    margin-right: 25px;
+
+    &:hover {
+      background-color: lighten($brand-accent-colour-one, 10%);
+
+      &:after {
+        border-color: transparent transparent transparent lighten($brand-accent-colour-one, 10%);
+      }
+    }
+
+    &:after {
+      border-width: 30px 0 30px 15px;
+      border-color: transparent transparent transparent $brand-accent-colour-one;
+      right: -15px;
+      top: 0;
+    }
+  }
+
+  .current, a:not(.previous_page):not(.next_page) {
+    display: inline-block;
+    height: 60px;
+    padding: 15px 10px;
+  }
+
+  .current {
+    background-color: $brand-accent-colour-one;
+    color: $white;
+    font-style: normal;
+  }
+
+  a:not(.previous_page):not(.next_page) {
+    color: $base-font-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,180 @@
+@import "all-globals";
+
+.getting-started {
+  padding: 25px 0;
+
+  @include breakpoint($desktop) {
+    padding: 100px 0 0;
+  }
+
+  h2 {
+    margin: 35px 0;
+  }
+
+  main {
+    width: 100%;
+    
+    @include breakpoint($desktop) {
+      @include span(7.4 of 12);
+    }
+
+    .link-button-general {
+      margin: 0 15px 60px 0;
+    }
+  }
+    
+  .sidebar-wrapper {
+    background-image: image-url("lake_victoria_uganda.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    margin: 50px 0;
+    position: relative;
+
+    @include breakpoint($large_desktop) {
+      background-size: contain;
+    }
+
+    &.mobile {
+      @include breakpoint($desktop) {
+        display: none;
+      }
+    }
+
+    &.desktop {
+      @include span(4.4 of 12 omega);
+      background-size: cover;
+      display: none;
+      margin: 0;
+
+      @include breakpoint($desktop) {
+        display: block;
+      }
+    }
+
+    &:after {
+      background-color: rgba(#3D586F, 0.9);
+      bottom: 0;
+      content: "";
+      height: 10px;
+      left: 0;
+      position: absolute;
+      width: 80%;
+    }
+  }
+
+  aside {
+    background-color: $brand-accent-colour-four;
+    color: $white;
+    margin-left: auto;
+    min-height: 300px; // remove
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    @extend %two-sided-border;
+
+    @include breakpoint($small_tablet) {
+      width: 70%;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .link-button-general {
+      margin: 0;
+    }
+  }
+
+  .first-steps {
+    margin: 50px 0;
+  }
+}
+
+.initial-questions {
+  border-bottom: 8px solid rgba($brand-accent-colour-one, 0.5);
+  border-top: 8px solid rgba($brand-accent-colour-three, 0.5);
+  clear: both;
+  width: 100%;
+
+  @include breakpoint($desktop) {
+    width: 73.72881%;
+  }
+  
+  > p, > ul li, > ol li, > h1, > h2, > h3, > h4 {
+    @include breakpoint($desktop) {
+      padding-right: 17.94915%; // to align right of content with <main>
+    }
+  }
+}
+
+.getting-started-ctas {
+  background: #dad9d6; /* Old browsers */
+  background: -moz-linear-gradient(top,  #dad9d6 0%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dad9d6), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #dad9d6 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #dad9d6 0%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #dad9d6 0%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #dad9d6 0%,#ffffff 100%); /* W3C */
+  border-top: 1px solid rgba(#dad9d6, 0.3);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dad9d6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  margin-bottom: 100px;
+}
+
+@include breakpoint($small_tablet) {
+  .cta-wrapper {
+    padding-bottom: 100px;
+  }
+}
+
+.contact-cta {
+  
+
+  @include breakpoint($small_tablet) {
+    background-image: image-url('terrace_fields.jpg');
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  @include breakpoint($desktop) {
+    float: left;
+    width: 50%;
+  }
+
+  .cta-item {
+    background-color: $brand-accent-colour-one;
+    color: $white;
+  }
+}
+
+.online-resources-cta {
+  margin-top: 50px;
+
+  @include breakpoint($small_tablet) {
+    background-color: $brand-accent-colour-four;
+  }
+
+  @include breakpoint($desktop) {
+    float: right;
+    margin-top: 0;
+    width: 50%;
+  }
+
+  .cta-item {
+    background-color: $white;
+  }
+}
+
+.cta-item {
+  padding: 35px;
+  width: 100%;
+
+  @include breakpoint($small_tablet) {
+    width: 80%;
+  }
+
+  p {
+    margin: 0 0 25px;
+  }
+}

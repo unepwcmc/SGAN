@@ -1,0 +1,3 @@
+<h3 class="accordion-title"><%= document.title %></h3>
+<%= raw document.description %>
+<div class="button blue-button"><%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(document, format: file_extension(document.file)), target: "_blank" if document.file %></div>

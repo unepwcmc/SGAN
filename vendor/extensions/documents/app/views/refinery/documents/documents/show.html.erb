@@ -1,0 +1,26 @@
+<% content_for :body_content_title do %>
+  <%= @document.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @document.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @document.description %>
+    </p>
+  </section>
+  <section>
+    <h1>File</h1>
+    <p>
+    <div class="button blue-button"><%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(@document, format: file_extension(@document.file)), target: "_blank" if @document.file %></div>
+    </p>
+  </section>
+<% end %>
+
+<%= render '/refinery/content_page' %>

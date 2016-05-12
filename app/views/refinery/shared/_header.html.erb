@@ -1,0 +1,18 @@
+<div class="header-wrapper">
+  <header id="primary-header" class="clearfix">
+
+      <a href="/"><%= image_tag "sgan-logo.svg", class: "logo" %></a>
+
+      <!-- NAVIGATION OUTPUT -->
+      <%= navigation_menu.to_html %>
+
+      <%= mobile_navigation_menu.to_html %>
+
+      <nav class="mobile-nav-trigger hamburger-menu">
+        <span class="menu-item"></span>
+        <span class="menu-item"></span>
+        <span class="menu-item"></span>
+      </nav>
+
+  </header>
+</div>

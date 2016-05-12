@@ -1,0 +1,56 @@
+nl:
+  refinery:
+    plugins:
+      categories:
+        title: Categories
+      documents:
+        title: Documents
+    documents:
+      admin:
+        categories:
+          actions:
+            create_new: Nieuwe Category toevoegen
+            reorder: De volgorde van de Categories wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Category-volgorde
+          records:
+            title: Categories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Categories. Druk op 'Nieuwe Category toevoegen'
+              om de eerste toe te voegen.
+          category:
+            view_live_html: Deze category op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze category
+            delete: Deze category definitief verwijderen
+        documents:
+          actions:
+            create_new: Nieuwe Document toevoegen
+            reorder: De volgorde van de Documents wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Document-volgorde
+          records:
+            title: Documents
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Documents. Druk op 'Nieuwe Document toevoegen'
+              om de eerste toe te voegen.
+          document:
+            view_live_html: Deze document op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze document
+            delete: Deze document definitief verwijderen
+      categories:
+        show:
+          other: Andere Categories
+      documents:
+        show:
+          other: Andere Documents
+  activerecord:
+    attributes:
+      refinery/documents/category:
+        title: Title
+        description: Description
+        parent_id: Parent
+        sub_category_position: Sub Category Position
+      refinery/documents/document:
+        title: Title
+        description: Description
+        file_id: File

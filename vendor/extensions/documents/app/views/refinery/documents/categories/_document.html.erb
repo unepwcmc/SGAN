@@ -1,0 +1,9 @@
+<!-- sub resources -->
+<li class="one-rounded-narrow" id="resource-<%= document.id %>">
+  <h2><%= raw document.title %></h2>
+  <div class="item-content">
+    <%= raw document.description %>
+    <%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.documents_document_path(document, format: file_extension(document.file)), class: 'link-button-general button', target: :blank if document.file %>
+  </div>
+</li>
+

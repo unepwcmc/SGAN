@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Logos::Admin::LogosController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.logos_admin_logos_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_logos_admin_logo_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Logos::Admin::LogosController.sortable? && ::Refinery::Logos::Logo.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Logos"),
+                 refinery.logos_admin_logos_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Logos"),
+                 refinery.logos_admin_logos_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

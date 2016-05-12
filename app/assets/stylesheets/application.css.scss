@@ -1,0 +1,31 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require refinery/formatting
+ *= require refinery/theme
+ *= require_self
+ *= require ./base/_reset
+ *= require ./base/_fonts
+ *= require ./base/_vars
+ *= require ./elements/_general-ui
+ *= require ./elements/_global-elements
+ *= require ./elements/_typography
+ *= require ./elements/_header
+ *= require ./elements/_footer
+ *= require ./elements/_buttons
+ *= require ./elements/_forms
+ *= require ./elements/_color-variations
+ *= require ./page-specific/_home
+ *= require ./page-specific/_general
+ *= require ./page-specific/_documents
+ *= require ./page-specific/_getting-started
+ *= require ./page-specific/_events
+ 
+ */

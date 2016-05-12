@@ -1,0 +1,62 @@
+@import "breakpoint";
+
+// Import compass css3 mixins imported by site-style.scss - http://compass-style.org/reference/compass/css3/
+@import "compass/typography/vertical_rhythm";
+
+// Basic list with no styles - applied to ul/ol
+@mixin styled-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li{
+    text-indent: 0;
+    padding: 0;
+  }
+}
+
+// Basic responsive image styles - applied to img
+@mixin res-image{
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+// Typesize mixin from
+// https://medium.com/@amlinarev/using-sass-compass-vertical-rhythm-to-set-up-typography-defaults-in-a-project-34fe2f1d2c02
+
+@mixin responsiveTypeSize($size) {
+ @if $size == "tiny" {
+  @include adjust-font-size-to($tiny-font-size, $tiny-font-leading);
+ }
+ @if $size == "small" {
+  @include adjust-font-size-to($tiny-font-size, $tiny-font-leading);
+  @include breakpoint($tablet) {
+   @include adjust-font-size-to($small-font-size, $tiny-font-leading);
+  }
+ }
+ @if $size == "base" {
+  @include adjust-font-size-to($small-font-size, $small-font-leading);
+  @include breakpoint($tablet) {
+   @include adjust-font-size-to($base-font-size, $base-font-leading);
+  }
+ }
+ @if $size == "medium" {
+  @include adjust-font-size-to($base-font-size, $base-font-leading);
+  @include breakpoint($tablet) {
+   @include adjust-font-size-to($medium-font-size, $medium-font-leading);
+  }
+ }
+ @if $size == "large" {
+  @include adjust-font-size-to($largish-font-size, $largish-font-leading);
+  @include breakpoint($tablet) {
+   @include adjust-font-size-to($large-font-size, $large-font-leading);
+  }
+ }
+ @if $size == "xlarge" {
+  @include adjust-font-size-to($large-font-size, $large-font-leading);
+  @include breakpoint($tablet) {
+   @include adjust-font-size-to($xlarge-font-size, $xlarge-font-leading);
+  }
+ }
+}

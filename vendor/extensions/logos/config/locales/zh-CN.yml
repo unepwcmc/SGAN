@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      logos:
+        title: Logos
+    logos:
+      admin:
+        logos:
+          actions:
+            create_new: 建立新的 Logo
+            reorder: 对 Logos 重新排序
+            reorder_done: 对 Logos 的重新排序结束
+          records:
+            title: Logos
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Logos yet. Click "Add New Logo" to add your first logo.
+            no_items_yet: 目前没有 Logos . 点击 "Add New Logo" 创建一个logo.
+          logo:
+            view_live_html: 查看 logo 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 logo
+            delete: 永久删除 logo
+      logos:
+        show:
+          other: 其他 Logos
+  activerecord:
+    attributes:
+      'refinery/logos/logo':
+        title: Title
+        url: Url
+        client_logo: Client Logo

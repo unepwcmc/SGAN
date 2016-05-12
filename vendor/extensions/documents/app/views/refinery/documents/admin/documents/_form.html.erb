@@ -1,0 +1,42 @@
+<%= form_for [refinery, :documents_admin, @document] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @document,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:description],
+                :object => "documents/document" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :file_id -%>
+    <%= render :partial => "/refinery/admin/resource_picker", :locals => { :f => f,
+                                                                           :field => :file_id,
+                                                                           :resource => @document.file} %>
+  </div>
+
+  <h1>Categories</h1>
+
+  <%= output_term_associations() %>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.documents.admin.documents.document'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @document.title) -%>
+
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

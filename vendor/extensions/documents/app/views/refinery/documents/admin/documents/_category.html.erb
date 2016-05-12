@@ -1,0 +1,9 @@
+<fieldset class=<%= "depth_#{category.depth}" %> >
+
+  <%= check_box_tag("document[category_ids][]", category.id, @document.category_ids.include?(category.id), data: { association: category.id}) %>
+  <%= label_tag category.title %>
+
+  <%= render partial: 'category', collection: category.children, as: 'category' if category.children.any? %>
+
+
+</fieldset>

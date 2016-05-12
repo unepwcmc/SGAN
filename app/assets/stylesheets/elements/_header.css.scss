@@ -1,0 +1,278 @@
+@import "../all-globals";
+
+.header-wrapper {
+  height: 99px;
+}
+
+header {
+  background-color: $white;
+  box-shadow: 0 1px 10px $mid-gray;
+  position: fixed;
+  width: 100%;
+  z-index: $z-index-layer--first;
+
+  @include breakpoint($desktop) {
+    box-shadow: none;
+  }
+
+  .logo {
+    float: left;
+    margin: 16px;
+    max-height: 65px; // need this for ie logo display
+    max-width: 100px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .primary-nav {
+    float: right;
+  }
+}
+
+.primary-nav {
+  display: none;
+
+  @include breakpoint($desktop) {
+    display: block;
+  }
+
+  > ul {
+
+    > li {
+      background-color: transparent;
+      float: left;
+      margin-left: 3px;
+      position: relative;
+
+      &:after {
+        bottom: 0;
+        content: "";
+        height: 5%;
+        left: 0;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+      }
+
+      &:hover {
+
+        a {
+          color: $white;
+        }
+
+        &:after {
+          height: 100%;
+        }
+
+        > ul {
+          max-height: 500px;
+        }
+      }
+
+      &.hasDropdown:hover {
+        overflow: initial;
+      }
+
+      @each $child, $color in (1: $brand-accent-colour-one, 
+                               2: $brand-accent-colour-two, 
+                               3: $brand-accent-colour-three,
+                               4: $brand-accent-colour-four) {
+        &:nth-child(#{$child}) {
+          &:after, &.hasDropdown li {
+            background-color: $color;
+          }
+          > ul li:hover {
+            background-color: darken($color, 5%);
+          }
+        }
+      }
+      
+      &:last-child {
+        background-color: $brand-secondary-colour;
+        transition: all 0.3s ease-in-out;
+
+        a {
+          color: $white;
+          font-weight: $font-weight--bold;
+        }
+
+        &:hover {
+          background-color: lighten($brand-secondary-colour, 30%);
+        }
+      }
+
+      ul {
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 100%;
+        width: 100%;
+        z-index: $z-index-layer--first;
+      }
+
+      a {
+        color: $base-font-color;
+        display: inline-block;
+        max-width: 250px;
+        min-width: 165px;
+        padding: 36px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+        z-index: $z-index-layer--first;
+      }
+    }
+  }
+}
+
+// primary nav dropdown styling
+.hasDropdown {
+
+  > a {
+    cursor: default;
+  }
+
+  > ul {
+    transition-delay: 0.3s;
+    transition: all 0.3s ease-in-out;
+
+    li {
+      border-bottom: 1px solid rgba($white, 0.2);
+      border-left: 1px solid rgba($white, 0.2);
+      border-right: 1px solid rgba($white, 0.2);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+
+      &:first-child {
+        border-top: 1px solid rgba($white, 0.2);
+      }
+
+      a {
+        color: $white;
+        display: block;
+        padding: 36px 5px;
+      }
+    }
+  }
+}
+
+.hamburger-menu {
+  display: inline-block;
+  height: 100px;
+  padding: 35px 25px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .menu-item {
+    background: black;
+    display: block;
+    height: 3px;
+    margin: 0 0 10px;
+    transition: all 0.3s ease-in-out;
+    width: 40px;
+  }
+    
+  &.open {
+
+    .menu-item {
+      margin: 0 0 5px;
+
+      &:first-child {
+        transform: rotate(45deg);
+        transform-origin: 10px;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: 8px;
+      }
+    }
+  }
+}
+
+//responsive nav
+.mobile-nav-trigger {
+  float: right;
+
+  @include breakpoint($desktop) {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  background-color: $brand-secondary-colour;
+  display: none; // hide until menu is clicked
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: $z-index-layer--first;
+
+  @include breakpoint($desktop) {
+    display: none;
+  }
+
+  > ul > li { // selector needs to be longer to out-specify previous
+    display: block;
+    float: none;
+  }
+
+  li {
+    border-bottom: 1px solid rgba($white,0.1);
+    &:last-child {
+      border-bottom: none;
+    }
+    a {
+      color: $white;
+      display: block;
+      font-size: 14px;
+      padding: 15px 0;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      
+      &:hover {
+        background-color: lighten($brand-secondary-colour, 10%);
+      }
+    }
+  }
+}
+
+.mobile-nav .hasDropdown {
+
+  > a {
+    position: relative;
+    
+    &:after {
+      position: absolute;
+      right: 25px;
+      top: calc(50% - 17px);
+      content: "+";
+      color: $white;
+      font-size: 24px
+    }
+
+    &.open:after {
+      content: "-";
+      right: 28px;
+    }
+  }
+  
+  > ul {
+    background-color: lighten($brand-secondary-colour, 5%);;
+    display: none;
+  }
+}

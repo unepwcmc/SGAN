@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      logos:
+        title: Logos
+    logos:
+      admin:
+        logos:
+          actions:
+            create_new: Přidat Logo
+            reorder: Řadit Logos
+            reorder_done: Konec řazení Logos
+          records:
+            title: Logos
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Logos. Zvolte "Přidat Logo" pro přidání prvního logo.
+          logo:
+            view_live_html: Zobrazit náhled logo<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit logo
+            delete: Smazat logo
+      logos:
+        show:
+          other: Další Logos
+  activerecord:
+    attributes:
+      'refinery/logos/logo':
+        title: Title
+        url: Url
+        client_logo: Client Logo

@@ -1,0 +1,15 @@
+<% content_for(:page_title) do @page.title end %>
+
+<div class="container content-left clearfix events">
+
+<main>
+  <% content_for :body do %>
+    <ul class="events-list">
+      <%= render(partial: "event", collection: @events) || render('no_events') %>
+    </ul>
+  <% end %>
+
+  <%= render '/refinery/content_page' %>
+</main>
+
+</div>

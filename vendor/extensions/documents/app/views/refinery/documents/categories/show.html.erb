@@ -1,0 +1,42 @@
+<% content_for(:page_title) { @page.title } %>
+<% content_for(:meta_description) { meta_prepare( @page.content_for(:body) ) } %>
+
+<div class="container content-right clearfix">
+
+  <main>
+
+    <a class="button link-button-general back-to-resources" href="/resources">Back to Resources</a>
+
+    <h1 class="resource-category-title">Resources: <%= @category.title %></h1>
+
+    <% if params['search'] %>
+      <h5>Search for "<%= params['search'] %>"</h5>
+    <% end %>
+
+    <% if @category.children.any? %>
+      <ul class="sub-category-list category-accordion">
+        <%= render partial: 'sub_category', collection: @category.children, as: :sub_category %>
+      </ul>
+    <% else %>
+      <ul class="documents-list resource-accordion">
+        <%= render partial: 'refinery/documents/documents/document', collection: @category.documents, as: :document %>
+      </ul>
+    <% end %>
+
+  </main>
+
+  <section class="sidebar clearfix">
+    <aside class="categories-sidebar">
+      <h3 class="h4">Categories</h3>
+      <%= render 'categories_sidebar' %>
+    </aside>
+
+    <aside class="search-sidebar one-rounded">
+      <h3 class="h4">Search</h3>
+      <%= render 'search_sidebar' %>
+    </aside>
+  </section>
+
+
+
+</div>

@@ -1,0 +1,54 @@
+it:
+  refinery:
+    plugins:
+      categories:
+        title: Categories
+      documents:
+        title: Documents
+    documents:
+      admin:
+        categories:
+          actions:
+            create_new: Aggiungi Nuovo Category
+            reorder: Riordina Categories
+            reorder_done: Termina il Riordino di Categories
+          records:
+            title: Categories
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Categories. Clicca "Aggiungi Nuovo Category"
+              per aggiungere il tuo primo category.
+          category:
+            view_live_html: Guarda live questo category <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo category
+            delete: Rimuovi per sempre questo category
+        documents:
+          actions:
+            create_new: Aggiungi Nuovo Document
+            reorder: Riordina Documents
+            reorder_done: Termina il Riordino di Documents
+          records:
+            title: Documents
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Documents. Clicca "Aggiungi Nuovo Document"
+              per aggiungere il tuo primo document.
+          document:
+            view_live_html: Guarda live questo document <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo document
+            delete: Rimuovi per sempre questo document
+      categories:
+        show:
+          other: Altri Categories
+      documents:
+        show:
+          other: Altri Documents
+  activerecord:
+    attributes:
+      refinery/documents/category:
+        title: Title
+        description: Description
+        parent_id: Parent
+        sub_category_position: Sub Category Position
+      refinery/documents/document:
+        title: Title
+        description: Description
+        file_id: File

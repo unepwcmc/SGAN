@@ -1,0 +1,79 @@
+// Element margins
+
+// Misc
+
+%styled-list{
+  @include styled-list
+}
+
+%res-image{
+  @include res-image
+}
+
+// Type margins
+%t-small-margin{
+  @include rhythm(0, 0, 0, 0.25);
+}
+
+%t-base-margin{
+  @include rhythm(0, 0, 0, 1);
+}
+
+// Type sizes
+
+%t-tiny {
+    @include responsiveTypeSize(tiny);
+}
+%t-small {
+    @include responsiveTypeSize(small);
+}
+%t-base {
+    @include responsiveTypeSize(base);
+}
+%t-medium {
+    @include responsiveTypeSize(medium);
+}
+%t-large {
+    @include responsiveTypeSize(large);
+}
+%t-xlarge {
+    @include responsiveTypeSize(xlarge);
+}
+
+%styled-button {
+  border-bottom-right-radius: 15px;
+  display: inline-block;
+  font-weight: $font-weight--ultra-bold;
+  margin: 10px 0;
+  padding: 6px 65px 6px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  @extend %t-tiny;
+}
+
+%button-border {
+  border-bottom: 5px solid rgba($black, 0.1);
+  border-right: 5px solid rgba($black, 0.1);
+}
+
+%two-sided-border {
+  border-bottom: 10px solid rgba($white, 0.2);
+  border-right: 10px solid rgba($white, 0.2);
+}
+
+%accordion-plus {
+  content: "+";
+  font-size: 42px;
+  font-weight: 100;
+  position: absolute;
+}
+
+%arrow {
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}

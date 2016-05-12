@@ -1,0 +1,89 @@
+/*** SITE WIDE VARIABLES ***/
+
+// Colours
+
+$brand-primary-colour           : #FFFFFF;
+$brand-secondary-colour         : #312F30;
+
+$brand-accent-colour-one        : #00ACED; // pure blue
+$brand-accent-colour-two        : #76BE42; // moderate green
+$brand-accent-colour-three      : #E88450; // soft orange
+$brand-accent-colour-four       : #0D2F4B; // dark blue
+
+$soft-blue          : #ACD3E4;
+$dark-grayish-blue  : #838691;
+$grayish-blue       : #99ADB7;
+$dark-electric-blue : #556D80;
+$mid-gray           : #5A606E;
+$light-gray         : #E6E5E2;
+$very-light-gray    : #F2F2F2;
+
+$black        : #312F30;
+$white        : #FFFFFF;
+
+// V rhythm setup
+
+$rhythm-unit          : "rem";
+$base-font-size       : 14px;
+$base-line-height     : 27px;
+$base-font-leading    : 1;
+$base-line-height-px  : 27px;
+$base-line-height-rem : 1.5rem; 
+
+// Typescale
+  
+$tiny-font-size       : 11px;
+$tiny-font-leading    : 1;
+
+$small-font-size      : 14px;
+$small-font-leading   : 1;
+
+$base-font-size       : 15px;
+$base-font-leading    : 1.1;
+
+$medium-font-size     : 16px;
+$medium-font-leading  : 1.4;
+
+$largish-font-size    : 24px;
+$largish-font-leading : 1.5;
+
+$large-font-size      : 34px;
+$large-font-leading   : 1.6;
+
+$xlarge-font-size     : 56px;
+$xlarge-font-leading  : 2;
+
+// Font Styles
+
+$base-font-color    : #312F30;
+$base-font-family   : "tablet-gothic-wide", Helvetica, Arial, sans-serif; 
+
+//***** Font Weights *****//
+// Configure as necessary 
+$font-weight--ultra-thin : 300;
+$font-weight--thin       : 400;
+$font-weight--medium     : 600;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 800;
+
+
+//***** Z-Index Layers *****//
+$z-index-layer--fourth   : 500;
+$z-index-layer--third    : 600;
+$z-index-layer--second   : 700;
+$z-index-layer--first    : 800;
+
+// Measurements - you can use this for any add hoc measurements 
+// (e.g. element heights) to ensure you keep sticking to the grid for example height: 20*$lh
+
+$lh : $base-line-height;
+
+// Breakpoints - adapt as required
+// all min-widths
+$mobile           : 320px;
+$large_mobile     : 481px;
+$small_tablet     : 608px;
+$tablet           : 769px;
+$large_tablet     : 900px;
+$desktop          : 1025px;
+$large_desktop    : 1240px;

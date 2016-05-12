@@ -1,0 +1,21 @@
+
+<li id="event-<%= event.id %>" class="event-item clearfix">
+  <div class="event-icon two-rounded">
+    <%= image_tag 'calendar-icon.png' %>
+  </div>
+
+  <div class="event-item-content">
+    <h2><%=raw event.title %></h2>
+    <% if event.start_date %>
+        <span class="event-date one-rounded-narrow"><%=raw output_event_dates(event) %></span>
+    <% else %>
+        <span class="event-date one-rounded-narrow">Date TBC</span>
+    <% end %>
+    <div class="location-category-wrapper">
+      <span><%=raw event.location %></span>
+    </div>
+    <%=raw event.description %>
+    <%= link_to copywriting('Download', {scope: 'resources', default: 'Download'}), refinery.events_event_path(event, format: file_extension(event.file)), class: "link-button-general", target: "_blank" if event.file %>
+  </div>
+  
+</li>

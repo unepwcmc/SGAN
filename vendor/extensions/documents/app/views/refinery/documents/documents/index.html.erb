@@ -1,0 +1,47 @@
+<% content_for(:page_title) { @page.title } %>
+<% content_for(:meta_description) { meta_prepare( @page.content_for(:body) ) } %>
+
+<div class="container content-right clearfix">
+
+  <main>
+
+    <h1><%= categories_title( @page.title, @category ) %></h1>
+
+    <% if params['search'] %>
+      <h5>Search for "<%= params['search'] %>"</h5>
+    <% end %>
+
+    <ul class="documents-list resource-accordion">
+      <%= render( partial: 'document', collection: @documents ) || render( 'no_results' ) %>
+    </ul>
+
+    <%= render 'pagination' %>
+
+  </main>
+
+  <section class="sidebar clearfix">
+    <aside class="categories-sidebar">
+      <h3 class="h4">Categories</h3>
+      <%= render 'categories_sidebar' %>
+    </aside>
+    <aside class="search-sidebar one-rounded default">
+      <h3 class="h4">Search</h3>
+      <%= render 'search_bar' %>
+    </aside>
+
+    <hr>
+
+    <aside class="case-studies-sidebar">
+      <h3 class="h4"><%= copywriting('Case Studies Sidebar Heading', {scope: 'resources', default: 'Catalogue of Case Studies'}) %></h3>
+      <p><%= copywriting('Case Studies Sidebar Content', {scope: 'resources', default: 'Suspendisse in tempus metus, vel vehicula justo. Curabitur ullamcor per ultrices risus, id rutrum eros.'}) %></p>
+      <%= link_to 'More Info', 'http://catalog.ipbes.net', class: 'link-button-general' %>
+    </aside>
+
+    <aside class="search-sidebar one-rounded tablet">
+      <h3 class="h4">Search</h3>
+      <!--Search Bar-->
+      <%= render 'search_bar' %>
+    </aside>
+  </section>
+
+</div>

@@ -1,0 +1,55 @@
+<section class="feature-banner" style="background-image:url(<%= @page.background_image.try(:url) %>);">
+  <div class="container">
+    
+    <div class="feature-title two-rounded">
+      <h1><%= copywriting('Feature Banner Heading', {scope: 'homepage', default: 'Advice and support for completing sub-global ecosystem assessment'}) %></h1>
+    </div>
+
+  </div>
+</section>
+
+<div class="container clearfix">
+
+  <section class="row col-2">
+    <main>
+      <%= raw @page.content_for(:body) %>
+    </main>
+    
+    <aside class="upcoming-events one-rounded">
+      <h3>Upcoming Events</h3>
+      <ul class="clearfix">
+        <%= render(partial: "event", collection: @events.limit(2)) || render( 'no_events' ) %>
+      </ul>
+      <%= link_to "View All Events", refinery.events_events_path, class: "link-button-general arrow" if @events.any? %>
+    </aside>
+  </section>
+    
+  <section class="row col-3">
+    <div class="grey-box js-equal-height-2">
+      <h2><%= copywriting('First Grey Box Heading', {scope: 'homepage', default: 'Advice'}) %></h2>
+      <div class="grey-box-content">
+        <%= raw @page.footer_section_left %>  
+      </div>
+    </div>
+
+    <div class="grey-box js-equal-height-2">
+      <h2><%= copywriting('Second Grey Box Heading', {scope: 'homepage', default: 'Resources'}) %></h2>
+      <div class="grey-box-content">
+        <%= raw @page.footer_section_right %>  
+      </div>
+    </div>
+
+    <aside class="latest-resources default-skin">
+      <h3>Latest Resources</h3>
+      <ul>
+        <%= render partial: "document", collection: @documents %>
+      </ul>
+    </aside>
+  </section>
+
+</div>
+
+
+
+
+

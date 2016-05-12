@@ -1,0 +1,27 @@
+/*** GRID AND BREAKPOINT SETUP ***/
+
+// Grid setup
+
+@import "susy";
+
+
+// Global default
+$susy: (
+  columns: 6,
+  gutters: .25,
+  math: fluid,
+);
+
+// Mid size screens
+$susy_nine_col: (
+  columns: 9,
+  gutters: .25,
+  math: fluid,
+);
+
+// Large screens
+$susy_twelve_col: (
+  columns: 12,
+  gutters: .25,
+  math: fluid,
+);

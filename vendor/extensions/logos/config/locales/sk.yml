@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      logos:
+        title: Logos
+    logos:
+      admin:
+        logos:
+          actions:
+            create_new: Pridať Logo
+            reorder: Preusporiadať Logos
+            reorder_done: Koniec radenia Logos
+          records:
+            title: Logos
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Logos. Kliknite na "Pridať Logo" pre pridanie prvého logo.
+          logo:
+            view_live_html: Zobraziť náhľad logo<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť logo
+            delete: Zmazať logo
+      logos:
+        show:
+          other: Daľšie Logos
+  activerecord:
+    attributes:
+      'refinery/logos/logo':
+        title: Title
+        url: Url
+        client_logo: Client Logo

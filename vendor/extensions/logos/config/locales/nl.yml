@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      logos:
+        title: Logos
+    logos:
+      admin:
+        logos:
+          actions:
+            create_new: Nieuwe Logo toevoegen
+            reorder: De volgorde van de Logos wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Logo-volgorde
+          records:
+            title: Logos
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Logos. Druk op 'Nieuwe Logo toevoegen' om de eerste toe te voegen.
+          logo:
+            view_live_html: Deze logo op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze logo
+            delete: Deze logo definitief verwijderen
+      logos:
+        show:
+          other: Andere Logos
+  activerecord:
+    attributes:
+      'refinery/logos/logo':
+        title: Title
+        url: Url
+        client_logo: Client Logo

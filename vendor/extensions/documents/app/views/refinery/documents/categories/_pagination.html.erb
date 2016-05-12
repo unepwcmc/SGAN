@@ -1,0 +1,11 @@
+<% if @total_records > 3 %>
+  <div class="pagination-box">
+    <p>Results per page:</p>
+    <%= form_tag refinery.documents_category_path(params[:id]), method: :get do %>
+      <%= select_tag :per_page, options_for_select([1,3,10,20,50], params[:per_page].to_i),
+                     :onchange => "this.form.submit()" %>
+      <%= render_hidden_fields(:per_page) %>
+    <% end %>
+    <%= will_paginate @documents_search, inner_window: 1, outer_window: 0 %>
+  </div>
+<% end %>

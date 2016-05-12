@@ -1,0 +1,31 @@
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47308714-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>
+    
+    // RESOURCE DOWNLOAD
+    if ( $("body.documents").length || $("body.categories").length ) {
+        $(".item-content a").on("click", function() {
+            var itemname = $(this).parents("li").find("h2").text();
+
+            var downloadurl = $(this).attr("href");
+            downloadurl = downloadurl.substr(downloadurl.lastIndexOf('/') + 1);
+
+            ga("send", "event", "resource-download-click", itemname, downloadurl);
+        });
+    }
+
+    // LINK THROUGH TO ASSESSMENTS
+    $(".case-studies-sidebar a").on("click", function() {
+        ga("send", "event", "link-click", "assessments");
+    });
+
+</script>

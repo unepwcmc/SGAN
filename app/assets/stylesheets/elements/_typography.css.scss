@@ -1,0 +1,106 @@
+@import "../all-globals";
+
+/*** TYPOGRAPHY ***/
+
+// For info on vertical rhythem helpers in compass see - http://atendesigngroup.com/blog/vertical-rhythm-compass
+
+//  Establish baseline - uses base font size and line height variables in vars.scss
+
+@include establish-baseline;
+
+
+// TYPOGRAPHY PLACEHOLDERS
+
+// // Type weights
+
+// .t-strong {
+//  font-weight: 700;
+// }
+// .t-regular {
+//  font-weight: 400;
+// }
+
+// Type alignment
+
+// .t-align-center {
+//     text-align: center;
+// }
+// .t-align-left {
+//     text-align: left;
+// }
+// .t-align-right{
+//     text-align: right;
+// }
+
+
+// Type Transforms
+
+%t-uppercase{
+  text-transform: uppercase;
+}
+
+// Type margins
+
+// %t-margin-1{
+//     @include rhythm(0, 0, 0, 1);
+// }
+
+// %t-margin-2{
+//     @include rhythm(0, 0, 0, 2);
+// }
+
+
+
+html{
+    font-family: $base-font-family;
+    font-weight: $font-weight--thin;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1, .h1{
+  @extend %t-xlarge;
+  font-weight: $font-weight--ultra-thin;
+  margin-top: 0;
+}
+h2, .h2{
+  @extend %t-large;
+  font-weight: $font-weight--thin;
+}
+h3, .h3{
+  @extend %t-medium; 
+  font-weight: $font-weight--ultra-bold;
+  text-transform: uppercase;
+}
+h4, .h4{
+  @extend %t-small;
+  font-weight: $font-weight--ultra-bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+h5, .h5{
+  @extend %t-medium;
+  font-weight: $font-weight--medium;
+  text-transform: none;
+}
+
+header a, {
+  @extend %t-tiny;
+  font-family: $base-font-family;
+}
+
+p{
+  @extend %t-base;
+  margin: 35px 0;
+}
+
+footer p, footer .desktop a{
+  @extend %t-base;
+}
+
+footer .mobile a {
+  @extend %t-medium;
+}
+
+// Special typography

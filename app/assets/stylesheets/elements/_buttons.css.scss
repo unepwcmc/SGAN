@@ -1,0 +1,54 @@
+@import "../all-globals";
+
+.button {
+  @extend %styled-button;
+
+  &.transparent-white {
+    border: 2px solid $white;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $brand-secondary-colour;
+    }
+  }
+
+  &.inverted {
+    background-color: $white;
+    color: $brand-accent-colour-one;
+    @extend %button-border;
+
+    &:hover {
+      background-color: darken($white, 5%);
+    }
+  }
+}
+
+.link-button-general {
+  background-color: $brand-accent-colour-one;
+  color: $white !important; // necessary to overwrite blue <a> color on general pages
+  @extend %button-border;
+  @extend %styled-button;
+  margin-right: 15px; // written here to overwrite placeholder margin
+
+  &:hover {
+    background-color: darken($brand-accent-colour-one, 5%);
+  }
+
+  &.arrow {
+    position: relative;
+
+    &:after {
+      background-image: image-url('white-chevron.svg');
+      background-size: 6px;
+      right: 10px;
+      top: calc(50% - 10px);
+      @extend %arrow;
+    }
+  }
+}
+
+.back-to-resources {
+  border-bottom-right-radius: 0;
+  padding: 6px 15px 6px 15px;
+}

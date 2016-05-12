@@ -1,0 +1,14 @@
+
+<li>
+  <%= image_tag cycle('green-event-sm-img.svg', 'orange-event-sm-img.svg') %>
+  <div class="event-sidebar-content">
+    <h4 class="h5"><%=raw event.title %></h4>
+    <% if event.start_date %>
+        <span><%=raw output_event_dates(event) %></span>
+    <% else %>
+        <span>Date TBC</span>
+    <% end %>
+    <span><%=raw event.location %></span>
+    <%= link_to "View More Information", events_events_path(anchor: "event-#{event.id}"), class: 'more-info-link' %>
+  </div>
+</li>

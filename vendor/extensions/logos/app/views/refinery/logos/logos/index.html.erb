@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="logos">
+    <% @logos.each do |logo| %>
+      <li>
+        <%= link_to logo.title, refinery.logos_logo_path(logo) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

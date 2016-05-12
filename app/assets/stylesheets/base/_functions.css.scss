@@ -1,0 +1,4 @@
+//converts px to ems
+@function em($target, $context: 18px){
+  @return ($target/$context) * 1em;
+}

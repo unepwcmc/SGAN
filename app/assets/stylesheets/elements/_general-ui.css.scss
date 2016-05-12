@@ -1,0 +1,180 @@
+@import "../_all-globals";
+
+//** BASE DECLARATIONS FOR HELPER CLASSES **//
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+// Hides text for background images
+.hidden {
+  position: absolute;
+  left: -4000px;
+}
+
+.one-rounded {
+  border-bottom-right-radius: 35px;
+}
+
+.one-rounded-narrow {
+  border-bottom-right-radius: 15px;
+}
+
+.two-rounded {
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 35px;
+}
+
+.content-left {
+  padding: 25px 0;
+  @include breakpoint($desktop) {
+    padding: 100px 0;
+  }
+
+  main {
+    width: 100%;
+    @include breakpoint($desktop) {
+      @include span(8.9 of 12);
+    }
+  }
+
+  .sidebar {
+    width: 100%;
+    @include breakpoint($desktop) {
+      @include span(2.9 of 12 omega);
+    }
+    
+    aside {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.content-right {
+  padding: 25px 0;
+  @include breakpoint($desktop) {
+    padding: 100px 0;
+  }
+
+  main {
+    width: 100%;
+    @include breakpoint($desktop) {
+      @include span(8.9 of 12 omega);
+    }
+  }
+
+  .sidebar {
+    width: 100%;
+    @include breakpoint($desktop) {
+      @include span(2.9 of 12);
+    }
+    aside {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.quote, .casestudy {
+  border-bottom-right-radius: 35px;
+
+  @include breakpoint($tablet) {
+    margin-left: 25%;
+    width: 75%;
+  }
+
+  a {
+    color: $brand-accent-colour-four;
+  }
+}
+
+.general img, .getting-started img {
+  border-bottom-right-radius: 35px;
+
+  @include breakpoint($tablet) {
+    height: auto;
+    margin-left: 25%;
+    max-width: 75%;
+  }
+}
+
+.quote, .casestudy {
+  color: $white;
+  padding: 35px 50px 35px;
+  position: relative;
+  @extend %two-sided-border;
+  h2 {
+    margin: 0 0 25px;
+  }
+
+  cite {
+    display: block;
+    font-style: normal;
+    margin: 15px 0;
+  }
+}
+
+.quote {
+  background-color: $brand-accent-colour-two;
+
+  p {
+    font-style: italic;
+  }
+}
+
+.casestudy {
+  background-color: $brand-accent-colour-three;
+}
+
+.block-arrow-one, .block-arrow-two, .block-arrow-three {
+  display: none;
+  height: 100px;
+  position: absolute;
+  top: 0;
+
+  @include breakpoint($tablet) {
+    display: block;
+  }
+
+  &:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 25px;
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 0;
+  }
+}
+
+.block-arrow-one {
+  background-color: rgba($brand-accent-colour-four, 0.3);
+  left: -34%;
+  width: 25%;
+
+  &:after {
+    border-color: transparent transparent transparent rgba($brand-accent-colour-four, 0.3);
+  }
+}
+
+.block-arrow-two {
+  background-color: rgba($brand-accent-colour-four, 0.6);
+  left: 0;
+  width: 82%;
+
+  &:after {
+    border-color: transparent transparent transparent rgba($brand-accent-colour-four, 0.6);
+  }
+}
+
+.block-arrow-three {
+  background-color: rgba($brand-accent-colour-four, 1);
+  left: 0;
+  width: 75%;
+
+  &:after {
+    border-color: transparent transparent transparent rgba($brand-accent-colour-four, 1);
+  }
+}

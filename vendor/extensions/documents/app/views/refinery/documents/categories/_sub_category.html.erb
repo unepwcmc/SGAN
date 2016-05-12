@@ -1,0 +1,8 @@
+<li>
+  <h2 class="sub_category-category-title"><%= sub_category.title %></h2>
+  <div class="resource-content">
+    <ul class="documents-list resource-accordion">
+      <%= render partial: 'document', collection: sub_category.documents %>
+    </ul>
+  </div>
+</li>

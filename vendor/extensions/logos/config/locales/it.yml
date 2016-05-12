@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      logos:
+        title: Logos
+    logos:
+      admin:
+        logos:
+          actions:
+            create_new: Aggiungi Nuovo Logo
+            reorder: Riordina Logos
+            reorder_done: Termina il Riordino di Logos
+          records:
+            title: Logos
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Logos. Clicca "Aggiungi Nuovo Logo" per aggiungere il tuo primo logo.
+          logo:
+            view_live_html: Guarda live questo logo <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo logo
+            delete: Rimuovi per sempre questo logo
+      logos:
+        show:
+          other: Altri Logos
+  activerecord:
+    attributes:
+      'refinery/logos/logo':
+        title: Title
+        url: Url
+        client_logo: Client Logo

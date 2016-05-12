@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @logo.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @logo.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Url</h1>
+    <p>
+      <%=raw @logo.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Client Logo</h1>
+    <p>
+      <%= image_fu @logo.client_logo, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="logos">
+      <% @logos.each do |logo| %>
+        <li>
+          <%= link_to logo.title, refinery.logos_logo_path(logo) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

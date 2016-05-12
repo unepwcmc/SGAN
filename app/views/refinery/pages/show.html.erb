@@ -1,0 +1,43 @@
+<% content_for(:page_title) { @page.title } %>
+<% content_for(:meta_description) { meta_prepare( @page.content_for(:body) ) } %>
+
+<div class="container content-left clearfix general">
+  <main>
+
+    <h1><%= raw @page.title %></h1>
+    <%= raw Shortcode.process( @page.content_for(:body) ) %>
+
+    <% if @page.show_client_logos? %>
+      <section class="funder-logos">
+        <%= render partial: "client_logos", collection: @logos, as: :logo %>
+      </section>
+    <% end %>
+
+  </main>
+
+  <% if @page.sidebar_title_one || @page.sidebar_title_two || @page.sidebar_title_three %>
+    <section class="sidebar">
+      <% unless @page.sidebar_title_one.empty? %>
+        <aside class="one-rounded">
+          <h3><%= raw @page.sidebar_title_one %></h3>
+          <%= raw @page.sidebar_description_one %>
+        </aside>
+      <% end %>
+
+      <% unless @page.sidebar_title_two.empty? %>
+        <aside class="one-rounded">
+          <h3><%= raw @page.sidebar_title_two %></h3>
+          <%= raw @page.sidebar_description_two %>
+        </aside>
+      <% end %>
+
+      <% unless @page.sidebar_title_three.empty? %>
+        <aside class="one-rounded">
+          <h3><%= raw @page.sidebar_title_three %></h3>
+          <%= raw @page.sidebar_description_three %>
+        </aside>
+      <% end %>
+    </section>
+  <% end %>
+  
+</div>

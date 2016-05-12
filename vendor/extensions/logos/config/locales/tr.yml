@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      logos:
+        title: Logos
+    logos:
+      admin:
+        logos:
+          actions:
+            create_new: Yeni Ekle Logo
+            reorder: Tekrar sirala Logos
+            reorder_done: Tekrar siralama tamamlandiLogos
+          records:
+            title: Logos
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Logos yok henuz.  Tikla "Yeni Ekle Logo" eklemek senin ilk logo.
+          logo:
+            view_live_html: Bunu canlu logo goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle logo
+            delete: Bunu Sil logo sonsuza dek
+      logos:
+        show:
+          other: Diger Logos
+  activerecord:
+    attributes:
+      'refinery/logos/logo':
+        title: Title
+        url: Url
+        client_logo: Client Logo

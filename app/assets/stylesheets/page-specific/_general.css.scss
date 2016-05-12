@@ -1,0 +1,63 @@
+@import "all-globals";
+
+.general {
+  main {
+
+    h2 {
+      margin: 35px 0;
+    }
+
+    > p, > ul li, > ol li, > h1, > h2, > h3, > h4 {
+      @include breakpoint($desktop) {
+        padding-right: 17.94915%; // to align right of content with <main>
+      }
+    }
+
+    ul {
+      margin: 25px 0;
+
+      li {
+        padding-left: 50px;
+        position: relative;
+
+        &:before {
+          background-image: image-url('black-chevron.svg');
+          left: 0;
+          top: calc(50% - 10px);
+          @extend %arrow;
+        }
+      }
+    }
+  }
+
+  aside {
+    background-color: $brand-accent-colour-four;
+    color: $white;
+    padding: 25px;
+    text-align: center;
+    @extend %two-sided-border;
+  }
+}
+
+.funder-logos {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.funder-logo {
+  display: inline-block;
+  margin: 15px 0;
+  vertical-align: middle;
+  width: 24%;
+
+  @include breakpoint($small_tablet) {
+    width: 19%;
+  }
+
+    img {
+    border-bottom-right-radius: 0;
+    margin: 0;
+    width: auto;
+  }
+}
+

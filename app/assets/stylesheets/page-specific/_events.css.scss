@@ -1,0 +1,94 @@
+@import "../_all-globals";
+
+.event-item {
+  border-bottom: 8px solid rgba($brand-accent-colour-four, 0.5);
+  margin-top: 50px;
+  padding-bottom: 25px;
+  position: relative;
+
+  @include breakpoint($tablet) {
+    margin-top: 65px;
+    padding-bottom: 50px;
+  }
+
+  @each $child, $color in ("4n+1": $brand-accent-colour-two, 
+                           "4n+2": $brand-accent-colour-four, 
+                           "4n+3": $brand-accent-colour-one,
+                           "4n+4": $brand-accent-colour-three) {
+    &:nth-child(#{$child}) {
+
+      .event-icon {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.event-icon {
+  display: none;
+  float: left;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  width: 25%;
+
+  @include breakpoint($tablet) {
+    display: block;
+  }
+
+  img {
+    margin-right: -30px;
+    margin-top: -30px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+  }
+}
+
+.event-item-content {
+  float: right;
+  width: 100%;
+  
+  @include breakpoint($tablet) {
+    width: 72.5%;
+  }
+
+  h2 {
+    margin: 0 0 15px;
+
+    @include breakpoint($tablet) {
+      padding-right: 250px;
+    }
+  }
+}
+
+.event-date {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  @include breakpoint($tablet) {
+    background-color: $brand-accent-colour-four;
+    color: $white;
+    display: inline-block;
+    font-weight: 800;
+    padding: 1px 25px 1px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 250px;
+  }
+
+  @extend %t-tiny;
+}
+
+.location-category-wrapper {
+  border-bottom: 2px solid $light-gray;
+  border-top: 2px solid $light-gray;
+
+  span {
+    border-right: 2px solid $light-gray;
+    display: inline-block;
+    padding: 10px 0;
+    width: 35%;
+  }
+}

@@ -1,0 +1,42 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(category) -%>">
+  <div class='clearfix'>
+    <% if category.children.present? %>
+      <span class="icon toggle <%= 'expanded' if Refinery::Pages.auto_expand_admin_tree %>" title="<%= t('expand_collapse', :scope => 'refinery.admin.pages') %>"></span>
+    <% else %>
+      <span class="icon"></span>
+    <% end %>
+
+    <span class='title <%= 'toggle' if category.children.present? %>'>
+      <%= category.title %>
+    </span>
+
+    <span class='actions'>
+      <%= link_to refinery_icon_tag('application_go.png'),
+                  refinery.documents_category_path(category),
+                  :target => "_blank",
+                  :title => t('.view_live_html') %>
+      <%= link_to refinery_icon_tag('page_add.png'),
+                  refinery.new_documents_admin_category_path(:parent_id => category.id),
+                  :title => t('new', :scope => 'refinery.admin.pages') %>
+
+      <%= link_to refinery_icon_tag('application_edit.png'),
+                  refinery.edit_documents_admin_category_path(category),
+                  :title => t('edit', :scope => 'refinery.admin.pages') %>
+
+      <%= link_to refinery_icon_tag('delete.png'),
+                  refinery.documents_admin_category_path(category),
+                  :class => "cancel confirm-delete",
+                  :title => t('delete', :scope => 'refinery.admin.pages'),
+                  :data => {
+                          :confirm => t('message',
+                                        :scope => 'refinery.admin.delete',
+                                        :title => category.title
+                          )
+                  },
+                  :method => :delete %>
+    </span>
+  </div>
+  <ul class='nested' data-ajax-content="<%= refinery.children_documents_admin_category_path(category) %>">
+    <%= render(:partial => 'category', :collection => category.children) if Refinery::Pages.auto_expand_admin_tree %>
+  </ul>
+</li>
