@@ -34,7 +34,6 @@ gem 'rack-rewrite'
 gem 'rack'
 gem 'rack-mini-profiler'
 gem 'unicorn'
-gem 'whenever'
 gem 'awesome_nested_set'
 gem 'friendly_id'
 gem 'thinking-sphinx', '~> 3.1.0'
@@ -86,9 +85,6 @@ gem 'capistrano', '~> 3.4', require: false
 gem 'capistrano-rails',   '~> 1.1', require: false
 gem 'capistrano-bundler', '~> 1.1', require: false
 gem 'capistrano-rvm',   '~> 0.1', require: false
-gem 'fog'
-gem 'unf'
-gem 'faker'
 gem 'whenever', :require => false
 gem 'capistrano-passenger', '~> 0.2.0', require: false
 
