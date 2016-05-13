@@ -24,4 +24,4 @@ production:
   indices_location: /home/wcmc/sgan/shared/db/spinx
   binlog_path: /home/wcmc/sgan/shared/log/binlog
   enable_star: true
-
+  port: 9307
