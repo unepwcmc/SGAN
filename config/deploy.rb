@@ -2,8 +2,8 @@
 lock '3.5.0'
 
 
-set :application, 'SGAN'
-set :repo_url, 'git@github.com:unepwcmc/SGAN.git'
+set :application, 'sgan'
+set :repo_url, 'git@github.com:unepwcmc/sgan.git'
 set :branch, 'master'
 
 set :deploy_user, 'wcmc'
@@ -24,8 +24,24 @@ set :ssh_options, {
 }
 
 
+  desc 'Rebuild the sphinx config'
+  task :configure_sphinx do
+    on roles(:app), in: :sequence do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ts:configure'
+        end
+      end
+    end
+  end
+after "deploy", :configure_sphinx
+
+
+
 set :linked_files, %w{config/database.yml config/initializers/refinery/core.rb config/initializers/secret_token.rb}
 
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
 
 set :keep_releases, 5
+
+set :passenger_restart_with_touch, false
