@@ -1,0 +1,448 @@
+/* * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+} */
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	height: 100%;
+	width: 100%;
+	/*-webkit-user-select: none;
+	-webkit-touch-callout: none;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color:#D9D9D9;
+}
+
+input[type=radio]{
+ transform: scale(1.5);
+ -webkit-transform: scale(1.5);
+ margin-top: 1.5px;
+}
+
+input[type=checkbox]{
+ transform: scale(1.5);
+ -webkit-transform: scale(1.5);
+ margin-top: 1.5px;
+}
+
+span.rp_links{
+    width:195px;
+    height:8px;
+    padding-top:2px;
+    display:block;
+    margin-left:42px;
+}
+span.rp_links a{
+    background: #444 url(../images/bgbutton.png) repeat-x;
+    padding: 2px 18px;
+    font-size:10px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    -moz-box-shadow: 0 1px 3px #000;
+    -webkit-box-shadow: 0 1px 3px #000;
+    box-shadow:0 1px 3px #000;
+    text-shadow: 0 -1px 1px #222;
+    cursor: pointer;
+    outline:none;
+}
+span.rp_links a:hover{
+    background-color:#000;
+    color:#fff;
+}
+
+span.rp_title{
+    font-size:11px;
+    color:#EEEEEE;
+    height:46px;
+    margin:4px 0px 0px 20px;
+    display:block;
+    text-shadow:1px 1px 1px #000;
+    padding-top:3px;
+    background:#777777;
+    -moz-box-shadow:0px 0px 5px #000 inset;
+    -webkit-box-shadow:0px 0px 5px #000 inset;
+    box-shadow:0px 0px 5px #000 inset;
+}
+
+.rp_list ul li div img{
+    width:70px;
+    border:none;
+    float:left;
+    margin:4px 10px 0px 4px;
+    border:1px solid #111;
+    -moz-box-shadow:1px 1px 3px #000;
+    -webkit-box-shadow:1px 1px 3px #000;
+    box-shadow:1px 1px 3px #000;
+}
+
+.rp_list ul li div{
+    display: block;
+    line-height:15px;
+    width: 240px;
+    height: 80px;
+    background:#333;
+    border:1px solid #000;
+    -moz-border-radius:5px 0px 0px 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.rp_list ul li{
+    width: 240px;
+    margin-bottom:5px;
+    display:none;
+}
+
+.rp_list ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.rp_list {
+    font-family:Verdana, Helvetica, sans-serif;
+    position:fixed;
+    right:-220px;
+    top:40px;
+    margin:0;
+    padding:0;
+}
+
+.stage {
+	width: 800px;
+	height: 600px;
+	margin:0 auto;
+	/* stage anchor */
+	position:relative; 
+	overflow:hidden;
+	/* border: 10px;
+	border-color: red; */
+}
+
+div.lo{
+	background-color:rgba(0,0,0,0.0);
+}
+
+div.page {
+/*  	width: 100%;
+	height: 100%; */
+	width: 0px;
+	height: 0px; 
+	position: absolute;
+	background-color:rgba(0,0,0,0.0);
+}
+
+div.masterpage {
+	width: 0px;
+	height: 0px; 
+	background-color:#b0c4de;
+	position: absolute;
+}
+
+
+div.pageinactive {display:none;}
+div.pageactive {display:block;}
+
+div.widget {
+/* 	box-shadow: 4px 4px 2px #888888;
+	border-radius: 8px; */
+	position: absolute;
+}
+
+div.temp {
+	/* display:none; */ 
+}
+
+
+.overable{
+	cursor:default;
+}
+
+div.hidden {
+	display:none;
+}
+
+div.buttona {
+	width: 100%;
+	height: 100%;
+}
+
+div.buttona-label {
+	position:absolute;
+	vertical-align: middle;
+	text-align: center;
+	font-family: Arial;
+	cursor:'default';
+	pointer-events:none;
+}
+
+div.buttona-box {
+	width: 100%;
+	height: 100%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 8px;
+	background-color: orange;
+}
+
+div.buttona-box_mouseover {
+	border-width: 2px;
+	border-color: green;
+}
+
+div.pagenav {
+	width: 100%;
+	height: 100%;
+}
+
+div.pagenav input.prev{
+	background: url('../img/common/go-prev.svg') no-repeat center center;
+	 -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        border-width:0px;
+}
+
+div.pagenav input.next{
+	background: url('../img/common/go-next.svg') no-repeat center center;
+	 -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        border-width:0px;
+}
+
+div.pagenav .label{
+	cursor:default;
+}
+
+div.pagenav pagibox{
+	width: 100%;
+}
+
+div.pagenav * .jPaginate{
+    height:34px;
+    position:absolute;
+    color:#a5a5a5;
+    font-size:small;   
+	width:200px;
+}
+div.pagenav * .jPaginate a{
+    line-height:15px;
+    height:18px;
+    cursor:pointer;
+    padding:2px 5px;
+    margin:2px;
+    float:left;
+}
+div.pagenav * .jPag-control-back{
+	position:absolute;
+	left:0px;
+}
+div.pagenav * .jPag-control-front{
+	position:absolute;
+	top:0px;
+}
+div.pagenav * .jPaginate span{
+    cursor:pointer;
+}
+div.pagenav * ul.jPag-pages{
+    float:left;
+    list-style-type:none;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+div.pagenav * ul.jPag-pages li{
+    display:inline;
+    float:left;
+    padding:0px;
+    margin:0px;
+}
+div.pagenav * ul.jPag-pages li a{
+    float:left;
+    padding:2px 5px;
+}
+div.pagenav * span.jPag-current{
+    cursor:default;
+    font-weight:normal;
+    line-height:15px;
+    height:18px;
+    padding:2px 5px;
+    margin:2px;
+    float:left;
+}
+div.pagenav * ul.jPag-pages li span.jPag-previous,
+div.pagenav * ul.jPag-pages li span.jPag-next,
+div.pagenav * span.jPag-sprevious,
+div.pagenav * span.jPag-snext,
+div.pagenav * ul.jPag-pages li span.jPag-previous-img,
+div.pagenav * ul.jPag-pages li span.jPag-next-img,
+div.pagenav * span.jPag-sprevious-img,
+div.pagenav * span.jPag-snext-img{
+    height:22px;
+    margin:2px;
+    float:left;
+    line-height:18px;
+}
+
+div.pagenav * ul.jPag-pages li span.jPag-previous,
+div.pagenav * ul.jPag-pages li span.jPag-previous-img{
+    margin:2px 0px 2px 2px;
+    font-size:12px;
+    font-weight:bold;
+        width:10px;
+
+}
+div.pagenav * ul.jPag-pages li span.jPag-next,
+div.pagenav * ul.jPag-pages li span.jPag-next-img{
+    margin:2px 2px 2px 0px;
+    font-size:12px;
+    font-weight:bold;
+    width:10px;
+}
+div.pagenav * span.jPag-sprevious,
+div.pagenav * span.jPag-sprevious-img{
+    margin:2px 0px 2px 2px;
+    font-size:18px;
+    width:15px;
+    text-align:right;
+}
+div.pagenav * span.jPag-snext,
+div.pagenav * span.jPag-snext-img{
+    margin:2px 2px 2px 0px;
+    font-size:18px;
+    width:15px;
+     text-align:right;
+}
+
+
+div.button {
+	width: 100%;
+	height: 100%;
+}
+div.bglayer {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	
+}
+div.button input.button-box {
+	width: 100%;
+	height: 100%;
+	outline: 0px;
+}
+
+div.button input.button-box_click{
+
+}
+.noselect{
+	-webkit-touch-callout: none;
+	-moz-user-select: none; /*���������*/
+	-webkit-user-select: none; /*webkit���������������*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*���������������������������*/
+	user-select: none;
+	cursor:default;
+	
+}
+div.text{
+	width: 100%;
+	height: 100%;
+	pointer-events:none;
+}
+div.text div.text-box{
+	width: 100%;
+	height: 100%;
+	padding: 3px 3px 0px 3px;
+}
+div.itext{
+	width:100%;
+	height:100%;
+}
+div.itext textarea.itext-box{
+	width:100%;
+	height:100%;
+}
+
+div.itext input.itext-box{
+	width:100%;
+	height:100%;
+}
+div.hotspot{
+	width:100%;
+	height:100%;
+}
+div.graphic{
+	width:100%;
+	height:100%;
+}
+div.graphic img.vertical{
+    -moz-transForm:scaleY(-1);
+    -webkit-transform:scaleY(-1);
+    -o-transform:scaleY(-1);
+    transform:scaleY(-1);
+    filter:FlipV;
+	
+}
+div.graphic img.horizontal{
+	-moz-transForm:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    filter:FlipH;
+}
+div.graphic img.hAndv{
+	-moz-transForm:scaleX(-1) scaleY(-1);
+    -webkit-transform:scaleX(-1) scaleY(-1);
+    -o-transform:scaleX(-1) scaleY(-1);
+    transform:scaleX(-1) scaleY(-1);
+    filter:FlipH FlipV;
+}
+div.audio{
+	width:100%;
+	height:100%;
+}
+div.ddlist{
+	width:100%;
+	height:100%;
+}
+div.ddlist select.ddlist-box{
+	width:100%;
+	height:100%
+}
+div.radiobutton div div.radio{word-wrap:break-word;}
+div.checkbox div div.check-box{word-wrap:break-word;}
+div.set {
+	width:0px;
+	height:0px;
+}
+
+div.subset {
+	width:0px;
+	height:0px;
+}
+
+div.shape {
+}
+div.qsetfeedback .ui-dialog-buttonpane .ui-dialog-buttonset{
+	font-size:10px;
+}
+.clickable {
+	cursor:pointer;
+}

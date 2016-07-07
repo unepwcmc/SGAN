@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shapes>
+<category id="runtime" name="tsunami shape resouces">
+<shape id="square" name="Square"/>
+<shape id="circle" name="Circle"/>
+<shape id="square15" name="15px Round Rect"/>
+</category>
+</shapes>

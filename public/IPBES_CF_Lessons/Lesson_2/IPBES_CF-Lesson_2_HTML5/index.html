@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=1200">
+<link href="css/smoothness/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/mediaelementplayer.min.css" />
+<style type="text/css" >@import "css/jquery.svg.css";</style> 
+<link href="css/axon.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="js/jquery.svg.js" type="text/javascript"></script>
+<script src="js/jquery.svgfilter.pack.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script src="js/jquery.blockUI.js" type="text/javascript"></script>
+<script src="js/jquery.colors.bundle.min.js" type="text/javascript"></script>
+<script src="js/mediaelement-and-player.min.js"></script>
+<script src="js/canvasutilities.js" type="text/javascript"></script>
+<script src="js/kinetic-v4.4.3.min.js" type="text/javascript"></script>
+<title>UNEP-WCMC: IPBES (Lesson 2) Sections 3,4</title>
+</head>
+<body >
+<script>
+$.blockUI({ message: '<h1><img src="img/busy.png" /></h1>' }); 
+</script>
+
+<script src="js/sbconfig.js" type="text/javascript"></script>
+<script src="js/l.js"></script>
+<script src="js/s.js"></script>
+<div>
+<svg version="1.1" width="0" height="0"><defs>
+<filter name="shadow" id="Filter2" x="0" y="0" width="110%" height="110%" filterUnits="objectBoundingBox"><feOffset result="offsetGraphic" in="SourceGraphic" dx="4" dy="4"/><feOffset result="offsetAlpha" in="SourceAlpha" dx="4" dy="4"/><feGaussianBlur result="blur" in="offsetAlpha" stdDeviation="1.2"/><feOffset result="offsetBlur" in="blur" dx="0" dy="0"/><feComponentTransfer><feFuncR type="linear" slope="0.5"/></feComponentTransfer><feMerge result="mergeGraphic"><feMergeNode in="offsetBlur"/><feMergeNode in="offsetGraphic"/></feMerge><feOffset in="mergeGraphic" dx="-3" dy="-3"/></filter>
+<filter name="offset" id="Filter5" x="0" y="0" width="120%" height="120%" filterUnits="objectBoundingBox"><feGaussianBlur result="blur" in="SourceAlpha" stdDeviation="1.2"/><feOffset result="offsetBlur" in="blur" dx="2" dy="2"/><feComponentTransfer><feFuncR type="linear" slope="0.7"/></feComponentTransfer><feMerge><feMergeNode in="offsetBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+</div>
+<div id="playerstage" class="stage"  style="border:0px;border-color:red;border-style:dashed;"></div>
+
+<script>
+$(window).resize(function() {
+		centerStage('#playerstage');
+});
+function setLang(){
+	var lang=undefined;
+	var data=undefined;
+	var langid=undefined;
+	$('#select').children().each(function(){
+		if($(this).attr("selected")=="selected"){
+			langid=$(this).attr("value");
+			lang="lang"+langid;
+		}
+	});
+	if(lang!=undefined){
+		if(lang=="lang_default"){
+			if(typeof keytable==='undefined'){
+			 data=sblodatahaha.changeStringToDom(sblodata);
+			}else{
+				data=sblodatahaha.parseWidgetData(sblodata,keytable);
+			}
+		}else{
+			$.cookie('sblanguage', langid, {expires: 365});
+			var langtable=window[lang];
+			if(typeof keytable==='undefined'){
+			 data=sblodatahaha.changeStringToDom(sblodata);
+			}else{
+				data=sblodatahaha.parseWidgetData(sblodata,keytable);
+			}
+			mergelang(data,langtable);
+		}	
+	}else{
+		if(typeof keytable==='undefined'){
+			 data=sblodatahaha.changeStringToDom(sblodata);
+		}else{
+			data=sblodatahaha.parseWidgetData(sblodata,keytable);
+		}
+	}
+	return data;
+}
+function selectLang(){
+	var div=$('<div>',{
+	id:'dialog',
+	style:"position:absolute;left:0px;top:0px;width:100%;height:100%;background-color:#00BFFF",
+	}).appendTo($('body'));
+	/*div.dialog({modal:true, buttons: [ { text: "Ok", click: function() { 
+		$( this ).dialog( "close" );
+		var data=setLang();
+		
+			createLesson(data,$('#playerstage'));
+		
+    	startLesson('#playerstage');
+	}
+	}]});
+	$(".ui-dialog-titlebar").hide();*/
+	var width=div.width();
+	var height=div.height();
+	var text=$('<hl>',{
+		style:"position:absolute;left:"+(width/2-100)+"px;top:"+(height/2-30)+"px;font-family:Arial;font-size:21.8333px;font-weight:400;color:#D4D4D4;line-height:15px;",
+	}).appendTo(div);
+	text.text("select your language:");
+	var select=$('<select>',{
+		id:'select',
+		name:"select",
+		style:"width:150px;height:20px;position:absolute;left:"+(width/2-100)+"px;top:"+(height/2)+"px;",
+	}).appendTo(div);
+	
+	var option1=$('<option>',{
+		"value":"_default",
+		}).appendTo(select);
+	option1.text("Default");
+	var lastlang=$.cookie('sblanguage');
+	for(var i in langkeytable){
+			var option=$('<option>',{
+			"value":i,
+			}).appendTo(select);
+			option.text(langkeytable[i]);
+			if (lastlang==i) {
+				option.attr('selected','true');
+			}
+	}
+	var button=$('<input>',{
+		type:"button",
+		id:"b",
+		value:"submit",
+		style:"position:absolute;left:"+(width/2+55)+"px;top:"+(height/2-2)+"px;"
+	}).appendTo(div);
+	$('#b').click(function(){
+		$('#dialog').hide();
+		var data=setLang();
+		
+		createLesson(data,$('#playerstage'));
+		
+    	startLesson('#playerstage');
+	});
+}
+function init(){
+		$(".stage").bind('touchstart',function(){
+			SBStage.isTablet=true;
+			$(this).unbind('touchstart');
+		});
+    	logIt("document ready");
+		sblogger.time('init lesson data');
+		/*if(typeof keytable==='undefined'){
+			var data=sblodatahaha.changeStringToDom(sblodata);
+			createLesson(data,$('#playerstage'));
+		}else{
+			var data=sblodatahaha.parseWidgetData(sblodata,keytable);
+			createLesson(data,$('#playerstage'));
+		}*/
+		sblogger.timeEnd('init lesson data');
+		$.unblockUI();	
+		return;
+		$.ajax({
+		    url: "https://smartbuilder.atlassian.net/s/en_US-nqpl0h-418945332/802/125/1.1/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?collectorId=fb4daa18",
+		    type: "get",
+		    cache: true,
+		    dataType: "script"
+		});
+		  
+		setTimeout(function() {
+		    var $list       = $('#rp_list ul');
+		    load(200);
+		    function load(initial){
+		        $list.find('li').hide().andSelf().find('div').css('margin-left',-initial+'px');
+		        var loaded  = 0;
+		        $list.find('li').each($.proxy(function(idx,sub) {
+		        	$(sub).show();
+		        },this));
+		        var d = 2000;
+		        $list.find('li:visible div').each(function(){
+		            $(this).stop().animate({
+		                'marginLeft':'-50px'
+		            },d += 100);
+		        });
+		    }
+		 
+		    $list.find('li:visible').live('mouseenter',function () {
+		        $(this).find('div').stop().animate({
+		            'marginLeft':'-220px'
+		        },200);
+		    }).live('mouseleave',function () {
+		        $(this).find('div').stop().animate({
+		            'marginLeft':'-50px'
+		        },200);
+		    });
+		},2000);
+     }
+     
+ 	$(window).load(function () {
+	});
+	
+	
+ 	function showlo() {
+ 		if (checkSupport()!=true) {
+ 			return;
+ 		}
+		init();
+		
+		if(typeof langkeytable==='undefined'){
+			var data=undefined;
+			if(typeof keytable==='undefined'){
+			 data=sblodatahaha.changeStringToDom(sblodata);
+			//	createLesson(data,$('#playerstage'));
+			}else{
+				data=sblodatahaha.parseWidgetData(sblodata,keytable);
+				//createLesson(data,$('#playerstage'));
+			}
+			createLesson(data,$('#playerstage'));
+			startLesson('#playerstage');
+		}else{
+			selectLang();
+			
+		}
+ 	
+    	
+ 	}
+	
+    $(document).ready(function() {
+	
+		showlo();
+    	
+    });
+     
+</script>
+</body>
+</html>
+<!-- 
+BUILD:1.4.0_201501120517 
+TYPE:sb3
+ID:salta7y000000000009m
+VER:16
+-->
