@@ -16,16 +16,6 @@ footer {
     text-align: left;
   }
 
-  img {
-    margin-top: 25px;
-    max-width: 100px;
-
-    @include breakpoint($small_tablet) {
-      bottom: 85px;
-      position: absolute;
-    }
-  }
-
   ul {
     margin-top: 15px;
 
@@ -52,6 +42,33 @@ footer {
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  .logo {
+    margin-top: 20px;
+
+    display: block;
+
+    @include breakpoint($small_tablet) {
+      bottom: 78px;
+      position: absolute;
+    }
+
+    .logo__title {
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      opacity: 0.3;
+      text-transform: uppercase;
+
+      display: block;
+    }
+
+    .logo__image {
+      max-width: 140px; 
+      opacity: 0.3;
     }
   }
 
