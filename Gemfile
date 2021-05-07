@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '5.2.4.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,8 +9,8 @@ gem 'rails', '3.2.14'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 5.0.5'
+  gem 'coffee-rails', '~> 4.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -18,16 +18,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', '>= 4.0.1'
+gem 'jquery-ui-rails', '>= 4.1.2'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
-gem 'refinerycms-nested_models'
+gem 'refinerycms', '~> 3.0.0'
+gem 'refinerycms-nested_models', '>= 0.1.0'
 gem 'refinerycms-copywriting'
 
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+gem 'refinerycms-acts-as-indexed', '~> 2.0.0'
 
 gem 'mysql2'
 gem 'rack-rewrite'
@@ -53,7 +53,7 @@ end
 
 group :test, :development do
   gem 'spork-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.5.0'
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rails'
@@ -61,14 +61,14 @@ group :test, :development do
   gem 'guard-spork'
   gem 'guard-bundler', require: false
   gem 'guard-livereload'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '>= 4.5.0'
   gem 'capybara'
   gem 'faker'
 end
 
 group :assets do
   gem 'autoprefixer-rails'
-  gem 'compass-rails', '~> 2.0.0'
+  gem 'compass-rails', '~> 2.0.5'
   gem 'compass', '~> 1.0.0.alpha.21'
   gem 'susy'
   gem 'breakpoint'
@@ -76,7 +76,7 @@ end
 
 gem 'fog'
 gem 'unf'
-gem 'lograge'
+gem 'lograge', '>= 0.3.1'
 gem 'shortcode'
 
 # Deployment
