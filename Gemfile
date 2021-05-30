@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
+gem 'refinerycms', '~> 4.0.0'
 gem 'refinerycms-nested_models'
 gem 'refinerycms-copywriting'
 
