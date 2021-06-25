@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,21 +22,21 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
-gem 'refinerycms-nested_models'
+gem 'refinerycms', '~> 3.0.0'
+gem 'refinerycms-nested_models', '>= 0.1.0'
 gem 'refinerycms-copywriting'
 
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+gem 'refinerycms-acts-as-indexed', '~> 2.0.0'
 
 gem 'mysql2'
 gem 'rack-rewrite'
 gem 'rack'
 gem 'rack-mini-profiler'
 gem 'unicorn'
-gem 'awesome_nested_set'
-gem 'friendly_id'
-gem 'thinking-sphinx', '~> 3.1.0'
+gem 'awesome_nested_set', '>= 2.1.6'
+gem 'friendly_id', '>= 5.0.0'
+gem 'thinking-sphinx', '~> 3.1.3'
 gem 'will_paginate', '~> 3.0'
 
 group :test do
@@ -52,7 +52,7 @@ group :development do
 end
 
 group :test, :development do
-  gem 'spork-rails'
+  gem 'spork-rails', '>= 4.0.0'
   gem 'rspec-rails'
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
