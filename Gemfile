@@ -48,7 +48,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'awesome_print'
-  gem 'letter_opener'
+  gem 'letter_opener', '>= 1.3.0'
 end
 
 group :test, :development do
