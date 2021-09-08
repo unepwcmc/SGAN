@@ -44,7 +44,7 @@ group :test do
 end 
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'awesome_print'
@@ -62,7 +62,7 @@ group :test, :development do
   gem 'guard-bundler', require: false
   gem 'guard-livereload'
   gem 'factory_girl_rails'
-  gem 'capybara'
+  gem 'capybara', '>= 2.4.4'
   gem 'faker'
 end
 
@@ -74,7 +74,7 @@ group :assets do
   gem 'breakpoint'
 end
 
-gem 'fog'
+gem 'fog', '>= 1.29.0'
 gem 'unf'
 gem 'lograge'
 gem 'shortcode'
