@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '5.2.8.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
+gem 'refinerycms', '~> 3.0.0'
 gem 'refinerycms-nested_models'
 gem 'refinerycms-copywriting'
 
@@ -35,8 +35,8 @@ gem 'rack'
 gem 'rack-mini-profiler'
 gem 'unicorn'
 gem 'awesome_nested_set'
-gem 'friendly_id'
-gem 'thinking-sphinx', '~> 3.1.0'
+gem 'friendly_id', '>= 5.0.3'
+gem 'thinking-sphinx', '~> 3.1.3'
 gem 'will_paginate', '~> 3.0'
 
 group :test do
