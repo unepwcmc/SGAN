@@ -9,8 +9,8 @@ gem 'rails', '3.2.14'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 3.2.6'
+  gem 'coffee-rails', '~> 3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
+gem 'refinerycms', '~> 2.1.5'
 gem 'refinerycms-nested_models'
 gem 'refinerycms-copywriting'
 
@@ -31,7 +31,7 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 
 gem 'mysql2'
 gem 'rack-rewrite'
-gem 'rack'
+gem 'rack', '>= 3.0.0'
 gem 'rack-mini-profiler'
 gem 'unicorn'
 gem 'awesome_nested_set'
@@ -68,7 +68,7 @@ end
 
 group :assets do
   gem 'autoprefixer-rails'
-  gem 'compass-rails', '~> 2.0.0'
+  gem 'compass-rails', '~> 2.0.4'
   gem 'compass', '~> 1.0.0.alpha.21'
   gem 'susy'
   gem 'breakpoint'
