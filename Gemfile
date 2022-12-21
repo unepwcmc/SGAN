@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,8 +9,8 @@ gem 'rails', '3.2.14'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -22,12 +22,12 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
-gem 'refinerycms-nested_models'
+gem 'refinerycms', '~> 3.0.0'
+gem 'refinerycms-nested_models', '>= 0.1.0'
 gem 'refinerycms-copywriting'
 
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+gem 'refinerycms-acts-as-indexed', '~> 2.0.0'
 
 gem 'mysql2'
 gem 'rack-rewrite'
@@ -68,7 +68,7 @@ end
 
 group :assets do
   gem 'autoprefixer-rails'
-  gem 'compass-rails', '~> 2.0.0'
+  gem 'compass-rails', '~> 2.0.4'
   gem 'compass', '~> 1.0.0.alpha.21'
   gem 'susy'
   gem 'breakpoint'
