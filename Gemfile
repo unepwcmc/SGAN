@@ -22,12 +22,12 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
-gem 'refinerycms-nested_models'
+gem 'refinerycms', '~> 3.0.0'
+gem 'refinerycms-nested_models', '>= 0.1.0'
 gem 'refinerycms-copywriting'
 
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+gem 'refinerycms-acts-as-indexed', '~> 2.0.0'
 
 gem 'mysql2'
 gem 'rack-rewrite'
