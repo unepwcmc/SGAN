@@ -74,7 +74,7 @@ group :assets do
   gem 'breakpoint'
 end
 
-gem 'fog'
+gem 'fog', '>= 1.37.0'
 gem 'unf'
 gem 'lograge'
 gem 'shortcode'
