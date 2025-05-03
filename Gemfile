@@ -53,7 +53,7 @@ end
 
 group :test, :development do
   gem 'spork-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 8.0.0'
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rails'
