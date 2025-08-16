@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '7.1.5.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,21 +22,21 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.1.0'
+gem 'refinerycms', '~> 4.0.0'
 gem 'refinerycms-nested_models'
 gem 'refinerycms-copywriting'
 
 # Optionally, specify additional Refinery CMS Extensions here:
-gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
+gem 'refinerycms-acts-as-indexed', '~> 3.0.0'
 
 gem 'mysql2'
 gem 'rack-rewrite'
 gem 'rack'
 gem 'rack-mini-profiler'
 gem 'unicorn'
-gem 'awesome_nested_set'
-gem 'friendly_id'
-gem 'thinking-sphinx', '~> 3.1.0'
+gem 'awesome_nested_set', '>= 3.6.0'
+gem 'friendly_id', '>= 5.0.3'
+gem 'thinking-sphinx', '~> 3.1.4'
 gem 'will_paginate', '~> 3.0'
 
 group :test do
